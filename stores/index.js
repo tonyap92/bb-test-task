@@ -3,13 +3,19 @@ import { defineStore } from "pinia";
 export const useWarehouseStore = defineStore("warehouses-store", {
   state: () => {
     return {
-      warehouses: [],
-      deals: {
-        total: 0,
-      },
-      liked: {},
-      search: "",
-      show: "",
+      warehouses: useLocalStorage("warehouses", []),
+      deals: useLocalStorage("deals", { total: 0 }),
+      liked: useLocalStorage("liked", {}),
+      search: useLocalStorage("search", ""),
+      show: useLocalStorage("show", ""),
+
+      // warehouses: [],
+      // deals: {
+      //   total: 0,
+      // },
+      // liked: {},
+      // search: "",
+      // show: "",
     };
   },
   getters: {
