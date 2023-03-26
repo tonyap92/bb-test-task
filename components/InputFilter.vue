@@ -2,18 +2,38 @@
 import { useWarehouseStore } from "@/stores/index.js";
 
 const warehouseStore = useWarehouseStore();
+
+const activeFilter = computed(() => {
+  return warehouseStore.show;
+});
 </script>
 
 <template>
   <div class="inputs-coll__filter">
     <ul class="inputs-coll__list">
-      <li @click="warehouseStore.setShow('')" class="inputs-coll__item">
+      <li
+        @click="warehouseStore.setShow('')"
+        :class="{ 'inputs-coll__item--active': activeFilter === '' }"
+        class="inputs-coll__item"
+      >
         Все типы
       </li>
-      <li @click="warehouseStore.setShow('Разовая продажа')" class="inputs-coll__item">
+      <li
+        @click="warehouseStore.setShow('Разовая продажа')"
+        :class="{
+          'inputs-coll__item--active': activeFilter === 'Разовая продажа',
+        }"
+        class="inputs-coll__item"
+      >
         Разовая продажа
       </li>
-      <li @click="warehouseStore.setShow('Аукцион')" class="inputs-coll__item">Аукцион</li>
+      <li
+        @click="warehouseStore.setShow('Аукцион')"
+        :class="{ 'inputs-coll__item--active': activeFilter === 'Аукцион' }"
+        class="inputs-coll__item"
+      >
+        Аукцион
+      </li>
     </ul>
   </div>
 </template>
@@ -47,6 +67,10 @@ const warehouseStore = useWarehouseStore();
 
   color: #969dc3;
   cursor: pointer;
+}
+
+.inputs-coll__item--active {
+  color: #2d3b87;
 }
 
 @media (max-width: 767.98px) {
