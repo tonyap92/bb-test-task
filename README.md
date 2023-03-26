@@ -1,7 +1,11 @@
 
 
 
-https://user-images.githubusercontent.com/114396404/227624007-1abca48f-ce03-464f-8113-6d23cc5d8d26.mp4
+
+
+https://user-images.githubusercontent.com/114396404/227766872-a03d02e1-bd9d-420d-9f51-dcba48c6e55c.mp4
+
+
 
 
 # Nuxt 3 Minimal Starter
